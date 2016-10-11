@@ -52,4 +52,15 @@ public class TriangleTest {
 		assertNotSame(A.getPerimeter(), 24);
 	}
 	
+	@Test(expected=TriangleException.class)
+	public void test_checkTriangle() {
+		Triangle A  = new Triangle(1.0, 1.0, 100.0);
+		try {
+			A.checkTriangle();
+		} catch (TriangleException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }

@@ -1,5 +1,6 @@
 package quiz3;
 
+
 public class Triangle {
 	
 
@@ -32,15 +33,29 @@ public class Triangle {
 	}
 	
 	public double p = (side1 + side2 + side3)/2;
+	public double a = (p * (p - side1) * (p - side2) * (p - side3));
 	
 	public double getArea(){
-		return Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));
+		return Math.sqrt(a);
 	}
 	public double getPerimeter(){
 		return (side1 + side2 + side3);
 	}
+	
+	public void checkTriangle() throws TriangleException{
+		
+		 if(a > 0)
+	      {
+	          Double.toString(getArea());
+	      }
+	      else
+	      {
+	         throw new TriangleException(a);
+	      }
+	}
+
 	public String toString(){
-		return ("The length of side 1 is " + side1 + ", the length of side 2 is " + side2+ ", and the length of side 3 is" + side3 + ". The area of this triangle is " + Double.toString(getArea()) + " and the perimeter of this triangle is " + Double.toString(getPerimeter()));
+	return ("The length of side 1 is " + side1 + ", the length of side 2 is " + side2+ ", and the length of side 3 is" + side3 + ". The area of this triangle is " + Double.toString(getArea()) + " and the perimeter of this triangle is " + Double.toString(getPerimeter()));
 	}
 
 }
